@@ -1,8 +1,21 @@
-
 # Real-Time Noise Cancellation System
 
 ## Objective
 The goal of this project is to develop a real-time noise cancellation system that processes audio in two distinct scenarios: single speaker and multiple speakers.
+
+1. **Single Speaker Scenario:**
+The system isolates and enhances the audio of one primary speaker while suppressing background noise and other voices.
+
+2. **Multiple Speaker Scenario:**
+The system preserves multiple speaker voices and simultaneously filters out environmental noise (e.g., white noise, workplace background noise, or vehicle noise).
+
+## **Requirements**
+
+Python 3.7+
+
+Dependencies:
+- numpy
+- pyaudio
 
 ## Project Structure
 ```
@@ -32,24 +45,41 @@ noise-cancellation-system
 https://github.com/tamaraiselva/Real-Time-Noise-Cancellation-System.git
 ```
 
-2. Navigate to the project directory:
-   
-```bash
-cd noise-cancellation-system
-```
-
-3. Install the required dependencies:
+2. Install the required dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
+## **Usage**
+
+1. **Run the Application**
+
 To run the noise cancellation system, execute the following command:
 
 ```bash
 python src/main.py
 ```
+
+2. **Select the Scenario**
+
+When prompted, select either:
+
+- `single` for Single Speaker Mode
+- `multi` for Multi-Speaker Mode
+
+3. **Process Audio**
+
+The application will start processing audio from your microphone in real time. Processed audio will play back through your speakers or headphones.
+
+4. **Stop the Application**
+
+Press `Ctrl+C` to stop processing. The processed audio will be saved to a `.wav` file in the output/ directory.
+
+**Example Output:**
+
+- `output/processed_single_audio.wav` (Single Speaker Scenario)
+- `output/processed_multi_audio.wav`(Multi-Speaker Scenario)
 
 ## Features
 
