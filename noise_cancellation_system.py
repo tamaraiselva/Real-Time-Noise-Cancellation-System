@@ -74,7 +74,7 @@ def main():
                 try:
                     raw_data = stream.read(CHUNK, exception_on_overflow=False)
                     input_audio = np.frombuffer(raw_data, dtype=np.int16)
-                    processed_audio = noise_cancellation(input_audio, mode=mode, reduction_level=reduction_level)
+                    processed_audio = noise_cancellation(input_audio, mode=mode, reduction_level=REDUCTION_LEVEL)
                     stream.write(processed_audio.tobytes())
                     frames.append(processed_audio.tobytes())
                 except Exception as e:
