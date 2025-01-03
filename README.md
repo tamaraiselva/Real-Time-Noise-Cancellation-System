@@ -1,93 +1,51 @@
 # Real-Time Noise Cancellation System
 
 ## Objective
-The goal of this project is to develop a real-time noise cancellation system that processes audio in two distinct scenarios: single speaker and multiple speakers.
 
-1. **Single Speaker Scenario:**
-The system isolates and enhances the audio of one primary speaker while suppressing background noise and other voices.
+The goal of this assignment is to develop a real-time noise cancellation system that processes audio in two distinct scenarios:
 
-2. **Multiple Speaker Scenario:**
-The system preserves multiple speaker voices and simultaneously filters out environmental noise (e.g., white noise, workplace background noise, or vehicle noise).
+1. Single Speaker Scenario: In this case, the system isolates and enhances the audio of one primary speaker while treating all other voices and background noises as interference to be minimized or eliminated.
 
-## **Requirements**
+2. Multiple Speaker Scenario: In this case, the system preserves multiple speaker voices and simultaneously filters out environmental noise (e.g., white noise, workplace background noise, or vehicle noise).
 
-Python 3.7+
+## Features
 
-Dependencies:
-- numpy
-- pyaudio
+- **Real-time Processing**: The system processes live audio input from the microphone and outputs clean, noise-reduced audio.
+- **Two Modes**: The system can operate in a single speaker scenario or multiple speaker scenario.
+- **File Output**: The processed audio will be saved as a `.wav` file.
+- **Dynamic Noise Reduction**: Adjust the noise reduction level during runtime.
 
-## Project Structure
-```
-noise-cancellation-system
-├── src
-│   ├── main.py                # Entry point for the application
-│   ├── audio_processor.py      # Handles audio input/output and filtering
-│   ├── filters
-│   │   ├── __init__.py        # Initializes the filters package
-│   │   ├── single_speaker.py   # Isolates and enhances primary speaker audio
-│   │   └── multi_speaker.py    # Preserves multiple speaker voices
-│   └── utils
-│       ├── __init__.py        # Initializes the utils package
-│       └── audio_utils.py      # Utility functions for audio processing
-├── tests
-│   ├── __init__.py            # Initializes the tests package
-│   └── test_audio_processor.py  # Unit tests for the AudioProcessor class
-├── output                      # Directory for processed audio files
-├── requirements.txt            # Lists project dependencies
-└── README.md                   # Documentation for the project
-```
+## Requirements
 
-## Setup Instructions
-1. Clone the repository:
+The project requires the following Python packages:
 
-```bash
-https://github.com/tamaraiselva/Real-Time-Noise-Cancellation-System.git
-```
+- `numpy`
+- `pyaudio`
 
-2. Install the required dependencies:
+### Installation
+
+To install the necessary dependencies, you can use the `requirements.txt` file.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## **Usage**
+### How to Use
 
-1. **Run the Application**
-
-To run the noise cancellation system, execute the following command:
+1. Run the Python script to start the real-time noise cancellation system.
 
 ```bash
-python src/main.py
+python noise_cancellation_system.py
 ```
 
-2. **Select the Scenario**
+2. The system will ask you to choose between two scenarios:
 
-When prompted, select either:
+- Enter `1` for Single Speaker Scenario.
+- Enter `2` for Multiple Speaker Scenario.
 
-- `single` for Single Speaker Mode
-- `multi` for Multi-Speaker Mode
+3. The system will start processing audio from your microphone in real-time. You can stop the system by pressing `Ctrl+C`.
 
-3. **Process Audio**
-
-The application will start processing audio from your microphone in real time. Processed audio will play back through your speakers or headphones.
-
-4. **Stop the Application**
-
-Press `Ctrl+C` to stop processing. The processed audio will be saved to a `.wav` file in the output/ directory.
-
-**Example Output:**
-
-- `output/processed_single_audio.wav` (Single Speaker Scenario)
-- `output/processed_multi_audio.wav`(Multi-Speaker Scenario)
-
-## Features
-
-- **Real-time processing:** The system should process audio streams in real-time, with a latency of less than `100 milliseconds` for each `200 ms` audio chunk.  
-
-- **Input and Output:** The system will take live audio input from a microphone and output a clean, noise-reduced audio stream.  
-
-- **File Output:** The processed (cleaned) audio will be saved as a `.wav` file.
+4. The processed (cleaned) audio will be saved to a `.wav` file in the `output_audio/` directory.
 
 ## License
-This project is licensed under the MIT License.
+This project is licensed under the MIT `License`.

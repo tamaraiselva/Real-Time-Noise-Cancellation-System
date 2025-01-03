@@ -1,6 +1,2 @@
 numpy
-scipy
 pyaudio
-soundfile
-librosa
-noisereduce
