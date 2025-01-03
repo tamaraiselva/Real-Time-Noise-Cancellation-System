@@ -5,15 +5,16 @@ import os
 import time
 
 # Constants for audio processing
-CHUNK = 8820
+CHUNK = 4410  # 100 ms per chunk (44100 / 2)
 FORMAT = pyaudio.paInt16
 CHANNELS = 1
 RATE = 44100
 AMPLIFICATION_FACTOR = 2.0
+REDUCTION_LEVEL = 0.8 
 
 # Noise cancellation function
 def noise_cancellation(input_audio, mode="Single_Speaker_Scenario", reduction_level=0.8):
-    if not np.any(input_audio):  # Check for silence
+    if not np.any(input_audio):
         return input_audio
 
     if mode == "Single_Speaker_Scenario":
@@ -52,7 +53,6 @@ def main():
             except ValueError:
                 print("Invalid input. Please enter a number.")
 
-        reduction_level = 0.9
         output_dir = "output_audio"
         os.makedirs(output_dir, exist_ok=True)
         output_file = os.path.join(output_dir, "processed_audio.wav")
